@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.32.0
+description: Scales Kubernetes worker nodes within autoscaling groups.
+home: https://github.com/kubernetes/autoscaler
+icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
+keywords:
+- - kubernetes
+- - autoscaler
+maintainers:
+- - email: ben@zhield.io
+  name: Ben Cessa
+  url: https://github.com/zhield-io/autoscaler-ccp
+name: cluster-autoscaler
+sources:
+- - https://github.com/kubernetes/autoscaler
+type: application
+version: 0.1.0
+
+...
+files:
+  cluster-autoscaler-0.1.0.tgz: sha256:cf5afe7db9d87d703ff1fa3b129227dc6f65956119ce4dfaa2e289de3aa71354
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJnvlq6CRAwD8G8nMSs/gAAbAoMADaSiv1OfD91Q0QWT6OBg2vu
+gdnbX6O/jS3SxeKfU4JoLEd50wOhum4/eGGiwgGtV09sVpXwDbmceI9tvl2NNkAd
+qocBmCsakqJZdirUjiH6CyomESYGn0K9tmtrdQUm1yuK0xmA2HlvBB71rSJEin6H
+p9zzbz37rNwV1V1QJG4QwqPJ3WhctXbMRshN741EQL/HA2YzTiEQtYucCivvt4oM
+8HfPcEVqiv1b8iwMBo7mN4VCKWEp5ibBc1TQgMdgFGRgs683YFnQP6jLqz2s7ZpK
+3SjQQkRs902q0IkefMbz5jYzOOmqlSrQhYB4blLzAabjGHRal/mfKTrh06/8y/Vj
+71imFLfz4Lbr7BI5PHf7loelFGAuXnlHFW2h0HpT59i9Zhkkb+ZgvKm1P1cXD2GI
+efM8aGfP+gWAmIbEsBwiFb+BG7II3e5NbLfxNC7qdrC72p07UnR7wtn/v/QHDn80
+XPY6rzIjlh2NPs1SB6efZue9PZP03GB4Mo2Dx3BhNA==
+=6a6B
+-----END PGP SIGNATURE-----

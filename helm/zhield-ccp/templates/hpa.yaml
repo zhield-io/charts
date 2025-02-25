@@ -1,0 +1,33 @@
+{{- if .Values.autoscaling.enabled }}
+{{- $fullName := include "cc.fullname" . -}}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ printf "%s-hpa" $fullName }}
+  labels:
+    {{- include "cc.labels" . | nindent 4 }}
+  {{- with .Values.autoscaling.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ $fullName }}
+  minReplicas: {{ .Values.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.autoscaling.maxReplicas }}
+  metrics:
+    {{- if .Values.autoscaling.cpuUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.autoscaling.cpuUtilizationPercentage }}
+    {{- end }}
+    {{- if .Values.autoscaling.memoryUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: {{ .Values.autoscaling.memoryUtilizationPercentage }}
+    {{- end }}
+{{- end -}}

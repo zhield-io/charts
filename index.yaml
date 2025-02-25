@@ -1,0 +1,47 @@
+apiVersion: v1
+entries:
+  cluster-autoscaler:
+  - apiVersion: v2
+    appVersion: 1.32.0
+    created: "2025-02-25T18:05:14.891999-06:00"
+    description: Scales Kubernetes worker nodes within autoscaling groups.
+    digest: cf5afe7db9d87d703ff1fa3b129227dc6f65956119ce4dfaa2e289de3aa71354
+    home: https://github.com/kubernetes/autoscaler
+    icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
+    keywords:
+    - kubernetes
+    - autoscaler
+    maintainers:
+    - email: ben@zhield.io
+      name: Ben Cessa
+      url: https://github.com/zhield-io/autoscaler-ccp
+    name: cluster-autoscaler
+    sources:
+    - https://github.com/kubernetes/autoscaler
+    type: application
+    urls:
+    - cluster-autoscaler-0.1.0.tgz
+    version: 0.1.0
+  zhield-ccp:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-02-25T18:05:14.892636-06:00"
+    description: Zhield custom cloud provider
+    digest: 3659496f4b780851d03cc20997287e7ecb9303b2a5cd256fb21954fef2a0a552
+    home: https://github.com/zhield-io/charts
+    icon: https://raw.githubusercontent.com/zhield-io/charts/main/helm/zhield-ccp/icon.png
+    keywords:
+    - kubernetes
+    - cloud-provider
+    maintainers:
+    - email: ben@zhield.io
+      name: Ben Cessa
+      url: https://github.com/zhield-io
+    name: zhield-ccp
+    sources:
+    - https://github.com/zhield-io/charts
+    type: application
+    urls:
+    - zhield-ccp-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-25T18:05:14.89159-06:00"

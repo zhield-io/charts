@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "cc.fullname" . }}
+  namespace: kube-system
+  labels:
+  {{- include "cc.labels" . | nindent 4 }}
+data:
+  cloud-config: |-
+    address: {{ .Values.ccpEndpoint }}
+    key: "/etc/ssl/client-cert/tls.key"
+    cert: "/etc/ssl/client-cert/tls.crt"
+    cacert: "/etc/ssl/client-cert/ca.crt"

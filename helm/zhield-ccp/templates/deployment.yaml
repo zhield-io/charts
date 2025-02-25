@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cc.fullname" . }}
+  labels:
+    {{- include "cc.labels" . | nindent 4 }}
+  {{- with .Values.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  selector:
+    matchLabels:
+      {{- include "cc.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+      labels:
+        {{- include "cc.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.image.pullSecrets }}
+        - name: {{ . }}
+        {{- end }}
+    {{- end }}
+      serviceAccountName: {{ include "cc.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "cc.fullname" . }}
+        {{- if .Values.tlsSecretName }}
+        - name: tls
+          secret:
+            secretName: {{ .Values.tlsSecretName }}
+        {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ trimPrefix "v" .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: config
+              mountPath: /etc/{{ .Chart.Name }}/conf
+            {{- if .Values.tlsSecretName }}
+            - name: tls
+              mountPath: /etc/{{ .Chart.Name }}/tls
+              readOnly: true
+            {{- end }}
+          args:
+            - server
+            - --config
+            - /etc/{{ .Chart.Name }}/conf/config.yaml
+          ports:
+            - name: rpc
+              protocol: TCP
+              containerPort: {{ .Values.access.port }}
+          env:
+            {{- toYaml .Values.env | nindent 12 }}
+          {{- if .Values.credentialsSecretName }}
+          envFrom:
+          - secretRef:
+              name: {{ .Values.credentialsSecretName }}
+          {{- end }}
+          securityContext:
+            {{- toYaml .Values.containerSecurityContext | nindent 12 }}
+          {{- if .Values.livenessProbe }}
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          {{- end }}
+          {{- if .Values.readinessProbe }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      nodeSelector:
+        {{- toYaml .Values.nodeSelector | nindent 8 }}
+      affinity:
+        {{- toYaml .Values.affinity | nindent 8 }}
+      tolerations:
+        {{- toYaml .Values.tolerations | nindent 8 }}

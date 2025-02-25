@@ -1,0 +1,178 @@
+# Application-specific configuration options. Will be stored as a configmap
+# and provided to the deployment as a configuration file.
+# The file will be mounted by default at: /etc/{{ .Chart.Name }}/config.yaml
+configuration: {}
+
+# Service access settings.
+access:
+  # Internal service type; used for "within cluster" communications.
+  serviceType: ClusterIP
+  # The port used within the cluster when communicating with the service.
+  port: 9090
+  # An ingress is required to enable access to the service from outside the
+  # cluster, i.e., by internet users.
+  ingress:
+    # Enable/disable public access completely.
+    enabled: true
+    # Provide TLS termination at ingress level; using the `tlsSecretName` credentials.
+    tls: true
+    # The encrypted traffic will be passed "as-is" to the service pods. The drawback with
+    # this approach in that the ingress controller is not capable of modifying the encrypted
+    # headers to add the PROXY protocol data and the service won’t receive the real user IP.
+    tlsPassthrough: false
+    # Specify which ingress controller should be used. If omitted the default
+    # cluster value will be used.
+    className: ""
+    # Additional ingress configuration settings.
+    annotations: {}
+    # Hostname (usually a public domain) that will be used to access the
+    # service.
+    host: chart-example.local
+    # HTTP traffic settings.
+    http:
+      # Expect and handle incoming HTTP traffic.
+      enabled: false
+      # Whether the Pod itself is serving secure traffic (HTTPS)
+      secureBackend: false
+      # Path prefixes used to identity incoming HTTP(S) traffic to the service.
+      # For example: chart-example.local/api
+      paths:
+        []
+        # - /api
+        # - /graphql
+    # gRPC traffic settings:
+    grpc:
+      # Enable direct gRPC access to the service.
+      enabled: true
+      # Whether the Pod itself is serving secure traffic.
+      secureBackend: false
+      # List of gRPC services exposed by the server. Will be used
+      # to configure ingress paths. The service identifiers are of the
+      # form: `protobuf_package.service`
+      services:
+        - grpc.health.v1.Health
+        - io.zhield.ccp.v1.CustomCloudProviderAPI
+        - clusterautoscaler.cloudprovider.v1.externalgrpc.CloudProvider
+
+# Release naming rules.
+nameOverride: ""
+fullnameOverride: ""
+
+# If provided, these TLS credentials will be mounted as a volume
+# on the deployment and (if enabled) used by the ingress for TLS termination.
+# Credentials will be mounted by default at: `/etc/{{ .Chart.Name }}/tls`
+tlsSecretName: ""
+
+# If provided, the credentials listed in this secret will be mounted
+# as environment variables in the deployment.
+credentialsSecretName: ""
+
+# Basic deployment settings.
+replicaCount: 1
+revisionHistoryLimit: 3
+image:
+  repository: project-name
+  # To deploy a specific application version. If not provided
+  # the 'Chart.AppVersion' value will be used by default.
+  tag: ""
+  pullPolicy: IfNotPresent
+  # Image registry credentials, provided as a simple list.
+  # https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+  pullSecrets: []
+  # - my-registry
+
+# Additional deployment annotations.
+annotations: {}
+# linkerd.io/inject: enabled
+
+# Custom environment variables for the container.
+# https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/
+env:
+  []
+  # - name: DEMO_GREETING
+  #   value: "Hello from the environment"
+
+# Health probes.
+# https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 2
+  successThreshold: 1
+  grpc:
+    service: "liveness"
+    port: 9091
+readinessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 2
+  successThreshold: 1
+  grpc:
+    service: "readiness"
+    port: 9091
+
+# Persistent storage.
+# https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+persistence:
+  enabled: false
+  # If set to true; the created volume won't be removed when the
+  # helm release is uninstalled.
+  keep: true
+  # Use an existing volume instead of creating a new one.
+  existingClaim: ""
+  storageClass: "default"
+  accessMode: "ReadWriteOnce"
+  size: "1Gi"
+  annotations: {}
+
+# Horizontal pod autoscaling.
+# https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+autoscaling:
+  enabled: false
+  maxReplicas: 3
+  minReplicas: 1
+  cpuUtilizationPercentage: 80
+  memoryUtilizationPercentage: 80
+  annotations: {}
+
+# Create a per-deployment service account.
+# https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
+serviceAccount:
+  # If not set and create is true, a name is generated based on the chart
+  # and release name.
+  name: ""
+  create: true
+  annotations: {}
+
+# Resource allocations/limits.
+# https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+resources:
+  requests:
+    cpu: 20m
+    memory: 32Mi
+  limits:
+    cpu: 100m
+    memory: 128Mi
+
+# Pod security settings.
+# https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+podSecurityContext: {}
+
+# Container security context.
+containerSecurityContext:
+  {}
+  # runAsUser: 10001
+  # runAsGroup: 10001
+  # runAsNonRoot: true
+  # readOnlyRootFilesystem: true
+  # allowPrivilegeEscalation: false
+  # seccompProfile:
+  #   type: RuntimeDefault
+  # capabilities:
+  #   drop: ["ALL"]
+
+# Pod allocation settings.
+# https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
+nodeSelector: {}
+tolerations: []
+affinity: {}

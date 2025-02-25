@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cc.fullname" . }}
+  labels:
+    {{- include "cc.labels" . | nindent 4 }}
+  {{- with .Values.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  selector:
+    matchLabels:
+      {{- include "cc.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        # prometheus.io/scrape: "true"
+        # prometheus.io/port: "8085"
+      labels:
+        {{- include "cc.selectorLabels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ include "cc.serviceAccountName" . }}
+      volumes:
+        - name: cloud-config
+          configMap:
+            name: "{{ include "cc.fullname" . }}"
+        - name: client-cert
+          secret:
+            secretName: "{{ .Values.tlsSecretName }}"
+            defaultMode: 0444
+      containers:
+        - name: cluster-autoscaler
+          image: "{{ .Values.image.repository }}:v{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+          resources:
+            limits:
+              cpu: 200m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          command:
+            - ./cluster-autoscaler
+            - --v=5
+            - --cloud-provider=externalgrpc
+            - --cloud-config=/config/cloud-config
+          volumeMounts:
+            - name: cloud-config
+              mountPath: /config
+              readOnly: true
+            - name: client-cert
+              mountPath: "/etc/ssl/client-cert"
+              readOnly: true

@@ -1,0 +1,29 @@
+# Release naming rules.
+nameOverride: ""
+fullnameOverride: ""
+tlsSecretName: "cas-cert"
+ccpEndpoint: "ccp.kube-system.svc:9090"
+replicaCount: 1
+revisionHistoryLimit: 3
+service:
+  create: true
+  port: 8085
+  portName: http
+  type: ClusterIP
+image:
+  repository: registry.k8s.io/autoscaling/cluster-autoscaler
+  tag: 1.32.0
+  pullPolicy: IfNotPresent
+rbac:
+  create: true
+  pspEnabled: false
+  serviceAccount:
+    name: ""
+    create: true
+    automountServiceAccountToken: true
+    annotations: {}
+additionalLabels:
+  app: cluster-autoscaler
+  k8s-addon: cluster-autoscaler.addons.k8s.io
+  k8s-app: cluster-autoscaler
+annotations: {}

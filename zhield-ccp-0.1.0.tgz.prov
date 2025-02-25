@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 0.1.0
+description: Zhield custom cloud provider
+home: https://github.com/zhield-io/charts
+icon: https://raw.githubusercontent.com/zhield-io/charts/main/helm/zhield-ccp/icon.png
+keywords:
+- - kubernetes
+- - cloud-provider
+maintainers:
+- - email: ben@zhield.io
+  name: Ben Cessa
+  url: https://github.com/zhield-io
+name: zhield-ccp
+sources:
+- - https://github.com/zhield-io/charts
+type: application
+version: 0.1.0
+
+...
+files:
+  zhield-ccp-0.1.0.tgz: sha256:3659496f4b780851d03cc20997287e7ecb9303b2a5cd256fb21954fef2a0a552
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJnvlq6CRAwD8G8nMSs/gAAoTQMAHDwzatEUMeeOtzBZZDfjwov
+J3MhdOH1U1w8Zoq0nH5cX12oFUeGuUzay8winnAXD5kLxUuIkAJye5ZRYFeAYNr8
+0TZCFha8tW+GrldjCljdR+xLxDuh2M7P/bHah2/Hf5zpYvpIuQpWNgNGpzFTCjb1
+jr34Kx9lCBFYKGYv3AUG7RI/pNXTa7HhAoMP/NkTOQxH2GT4jWggHNnDkZ5N7eGG
+cDJ754WBUjlgIZLJosMAjzQLxSNvsZIZMU7AasQBtIGUJvLfNwn7GZ1176w0F3gP
+VxqAe/b8+cfw8mJTj5FJ0xZjYUS+RWqjnX9JAqivDaLUEuo+HqPN8j7KwX1R1NWr
+EAUDrZ4/WGwi4756eXfgcqkwFDny0kAl7qiwQ6dbM/R0mK4VuBRG32qNj6KOa0xP
+N4WONQwOChny3v9bKGtaJy2I0W2LVhDfBeGzO528qFjMHonVmg5iXWBMC+/lqTh/
+xA7Hy1wdCOXIDBd7htfwHQJxnmVohG2kIc9EWMBzMg==
+=lGGt
+-----END PGP SIGNATURE-----

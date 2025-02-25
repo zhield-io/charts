@@ -1,0 +1,17 @@
+apiVersion: v2
+name: zhield-ccp
+description: Zhield custom cloud provider
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+home: https://github.com/zhield-io/charts
+icon: https://raw.githubusercontent.com/zhield-io/charts/main/helm/zhield-ccp/icon.png
+sources:
+  - https://github.com/zhield-io/charts
+keywords:
+  - kubernetes
+  - cloud-provider
+maintainers:
+  - url: https://github.com/zhield-io
+    name: Ben Cessa
+    email: ben@zhield.io

@@ -1,0 +1,17 @@
+apiVersion: v2
+name: cluster-autoscaler
+description: Scales Kubernetes worker nodes within autoscaling groups.
+type: application
+version: 0.1.0
+appVersion: 1.32.0
+home: https://github.com/kubernetes/autoscaler
+icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
+sources:
+  - https://github.com/kubernetes/autoscaler
+keywords:
+  - kubernetes
+  - autoscaler
+maintainers:
+  - url: https://github.com/zhield-io/autoscaler-ccp
+    name: Ben Cessa
+    email: ben@zhield.io
