@@ -8,7 +8,10 @@ home: https://github.com/zhield-io/charts
 icon: https://raw.githubusercontent.com/zhield-io/charts/main/helm/zhield-ccp/icon.png
 keywords:
 - - kubernetes
+- - autoscaler
 - - cloud-provider
+- - provider
+- - ccp
 maintainers:
 - - email: ben@zhield.io
   name: Ben Cessa
@@ -21,17 +24,17 @@ version: 0.1.0
 
 ...
 files:
-  zhield-ccp-0.1.0.tgz: sha256:67fdee596d405ea3bdf69b122a42d048c1a12a0355ac006048140ad98460fd5c
+  zhield-ccp-0.1.0.tgz: sha256:bd4cfd11d5f37e8e471f79b8e708a4120f93b00acbe75355cad22613e3a89f23
 -----BEGIN PGP SIGNATURE-----
 
-wsDcBAEBCgAQBQJnvnCaCRAwD8G8nMSs/gAAjkYMAKC9eXZPC0+at+cvTB4a6kbM
-gCL9br2zHZhv5xzpVqRk0vx/a+NolCdEtD5fIUyhRRIenYAFSGdBGkHvGAmQrDFX
-ObPgMqH9HOxyO/S0fvfIFxSymVrhbAbLgQtBjUDXRGIVcdj5t/xUo3aTU4+K6tbC
-D4BWvow3cs+fQGhXyNhScGNm2KvOl3akzb3ImzPZgwpvjMg9zGQSPIS3RlVMtDZh
-q6Ni+/Jgt+E7hSRTysjUtn3GyZiWViAHpIyMBL+OLIlMtJ87TH1nzeIft4VHwLBA
-xCPvjfQ11vuqdtsIlZJG5zIZBGwbgloEnG1D+ZCZPbaJ5NASJfskF71E71Ht//kp
-b3AHXjPUF5EG9wA8RKJXKnbFOT++y0OyHt0nVV4s+oVZhFUQDMP7rAxYejtRvr/9
-tRZMskQV+lzV06lwiRlv7aYp3pZIruys7xLPo7mWqYGadhN5dKswju+aEyghllER
-dFKT/uXp/RUV1ykHHdIJT65gCY8Cc63mB95p6rpGoQ==
-=WVNz
+wsDcBAEBCgAQBQJnxfs/CRAwD8G8nMSs/gAAvV0MAA7IJPO4Hz5Y6eDerJGXhHRK
+gdv3+yBaYXyF1BGmixhTQQ46AOHI9sRd25jDufqm+A/On3e59bNbpu1vyG2Tg0i/
+r4A0gI4VxTHy9XkKpRKQUXg+aDbovUySrHioWD741kU8hi62auLZIoQaI0DWWqzD
+Llg6n52xG791wfRQJtYxT006NLDOBSX/EmCnX/JeWzSIxKAZWFmuu5jKnq8cGyNE
+GMqHZi4Lw9Gmgds5lWoEYCUzzovYjz2ob2t0h1TZD5ttLp6OmIF7PE5O3JjUpDya
+soxPLuFrsJZXgYUb+gNMjCaf2phzq6S1snmYFBATuio/eW5KzVxgrBs1kp5Rx2+X
+rBFXIAienqTbAvKCqVK1uCa/qWQne37zadapcxnokfqI0IgaamJxSZ5CMdrs5Plt
+q80hSBrSAMdLBUdLONzyz+/5/xRnzcZsFX9TrHVBWmVhGkHqA3GULphPGO20QG4w
+OebngllpvhRrBY9CPnRueMl6E29rgDdPA4ysY6JuFw==
+=S2Gi
 -----END PGP SIGNATURE-----

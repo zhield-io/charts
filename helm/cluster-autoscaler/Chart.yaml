@@ -11,6 +11,7 @@ sources:
 keywords:
   - kubernetes
   - autoscaler
+  - cas
 maintainers:
   - url: https://github.com/zhield-io/autoscaler-ccp
     name: Ben Cessa

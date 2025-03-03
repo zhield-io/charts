@@ -10,7 +10,10 @@ sources:
   - https://github.com/zhield-io/charts
 keywords:
   - kubernetes
+  - autoscaler
   - cloud-provider
+  - provider
+  - ccp
 maintainers:
   - url: https://github.com/zhield-io
     name: Ben Cessa

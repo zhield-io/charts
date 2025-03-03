@@ -9,6 +9,7 @@ icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
 keywords:
 - - kubernetes
 - - autoscaler
+- - cas
 maintainers:
 - - email: ben@zhield.io
   name: Ben Cessa
@@ -21,17 +22,17 @@ version: 0.1.0
 
 ...
 files:
-  cluster-autoscaler-0.1.0.tgz: sha256:303ac4700f802beb234e19eaf2446e1a74162877a4127fd7463d12e516764184
+  cluster-autoscaler-0.1.0.tgz: sha256:49443af976ed3ae30176b48fba7de4ce74d24e8b719a6c05fedd70d39e8f8f02
 -----BEGIN PGP SIGNATURE-----
 
-wsDcBAEBCgAQBQJnvnCaCRAwD8G8nMSs/gAA7j4MABYuSp6w9WHM2Ce9wXGsPjd5
-waJlff7HyrNFodhiOq+tikdGj2k8mwhUmI5aC2KYbginDq5hVFjPwWghnpDW/c6h
-B7pFGOrKyGww08Ya2d4EQukWwcLSO+O8yuM8MdOoABGhkDljn5LOVdHz4+GBnBgZ
-s78XqAipcjdub4pHDlOVBakw8I1uJBWgs/wuzGYwFmUo2MzhJhaSgQDqXCALAEgO
-gNMeJJGKGzKf2LliqJ37GEWM/v+3a2ReoXqlQssS2AluCTv3+Q6IUlBDrKa0TCma
-HH9zkuR4SKeB0Y1cGWRwpIBAWQbshDuBgSbl0aq1KG5gUvLSi/OKkJf88KCLx2e7
-adPB9ekLq4aAb6TTYUw9Cv/FqonfKfYnDLippp4ktNST6pCIuRrhrIiRv0NdzuEd
-45vXsVtc7rqoxpXgjyWBDN2P3lGBMnsHkZqwKbJMCD+8rPoDqRBdLM8/j7fCXR8M
-NmP5o2tRdcXtE/2ZFgDY246WgbNU1fhmyxcv+8pm7g==
-=6NdH
+wsDcBAEBCgAQBQJnxfs/CRAwD8G8nMSs/gAAPK0MACDFU9jYOpFcF+5VVJXanJLd
+aSwPBmDib6plp8wv1vKRwILv171EvJhtH3AFIuNu9hNhLiByhtObSwb/uSTQZTyU
+VlqcKxd+cKoxq3OtNPQvXvqqU0y34Xa5TQEVxj+nhL7QDZUJZX0XLHZoAAxcDwlk
+akl9TfXJWizScSDv1XEySLmA2FtMZPC6xE6W/Deygo+oiNSRccWpvIQpQPl60sXY
+ftjQAGfIfXq/fXX5Gh0SgdBEOxqZAfu0waq9ycYd0RlOgfXT2JUC2J7vD2O+9T8k
+a14SMedfKI9/DhHBuXS4Ez07I+xZ7J1iXn14+9g7hf5xxLVW0ES7oE0gyWah3tsp
+LMReK60EULdUsqm82rNcUiKNeCjAnU9Xc3VciH7CjkWXD8/6pbniM/4BhzGTutsY
+qCSt+4Lr+E3mGovSoWTiXSyaIxcPX4w17tXECBN+umgYmy8ibNV3m3meJZh01XBJ
+gzgfgzP/61eS85F/CLkBu8TIp2yDpEl5ClbS+N6p6A==
+=0TGv
 -----END PGP SIGNATURE-----
