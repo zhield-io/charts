@@ -38,12 +38,12 @@ spec:
           image: "{{ .Values.image.repository }}:v{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           resources:
-            limits:
-              cpu: 200m
-              memory: 512Mi
             requests:
               cpu: 100m
               memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 512Mi
           command:
             - ./cluster-autoscaler
             - --v=5

@@ -3,7 +3,7 @@ name: cluster-autoscaler
 description: Scales Kubernetes worker nodes within autoscaling groups.
 type: application
 version: 0.1.0
-appVersion: 1.32.0
+appVersion: 1.33.3
 home: https://github.com/kubernetes/autoscaler
 icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
 sources:

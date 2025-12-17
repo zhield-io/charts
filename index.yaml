@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   cluster-autoscaler:
   - apiVersion: v2
-    appVersion: 1.32.0
-    created: "2025-03-03T12:55:59.21899-06:00"
+    appVersion: 1.33.3
+    created: "2025-12-17T13:02:19.554094-06:00"
     description: Scales Kubernetes worker nodes within autoscaling groups.
-    digest: 49443af976ed3ae30176b48fba7de4ce74d24e8b719a6c05fedd70d39e8f8f02
+    digest: 81cdd07b6a2f0d728f41dea33aae33f3dfe974512fa5fcd0a6b166d2bdcdccd9
     home: https://github.com/kubernetes/autoscaler
     icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
     keywords:
@@ -26,9 +26,9 @@ entries:
   zhield-ccp:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2025-03-03T12:55:59.219646-06:00"
+    created: "2025-12-17T13:02:19.554739-06:00"
     description: Zhield custom cloud provider
-    digest: bd4cfd11d5f37e8e471f79b8e708a4120f93b00acbe75355cad22613e3a89f23
+    digest: d7434af28d1fd8bd1131cc7ad0811c34ac4548b2362393aa80b89dbddc2d776d
     home: https://github.com/zhield-io/charts
     icon: https://raw.githubusercontent.com/zhield-io/charts/main/helm/zhield-ccp/icon.png
     keywords:
@@ -48,4 +48,4 @@ entries:
     urls:
     - zhield-ccp-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-03T12:55:59.217683-06:00"
+generated: "2025-12-17T13:02:19.553635-06:00"

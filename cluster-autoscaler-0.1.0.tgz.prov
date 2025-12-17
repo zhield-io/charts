@@ -2,7 +2,7 @@
 Hash: SHA512
 
 apiVersion: v2
-appVersion: 1.32.0
+appVersion: 1.33.3
 description: Scales Kubernetes worker nodes within autoscaling groups.
 home: https://github.com/kubernetes/autoscaler
 icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
@@ -22,17 +22,19 @@ version: 0.1.0
 
 ...
 files:
-  cluster-autoscaler-0.1.0.tgz: sha256:49443af976ed3ae30176b48fba7de4ce74d24e8b719a6c05fedd70d39e8f8f02
+  cluster-autoscaler-0.1.0.tgz: sha256:81cdd07b6a2f0d728f41dea33aae33f3dfe974512fa5fcd0a6b166d2bdcdccd9
+
 -----BEGIN PGP SIGNATURE-----
 
-wsDcBAEBCgAQBQJnxfs/CRAwD8G8nMSs/gAAPK0MACDFU9jYOpFcF+5VVJXanJLd
-aSwPBmDib6plp8wv1vKRwILv171EvJhtH3AFIuNu9hNhLiByhtObSwb/uSTQZTyU
-VlqcKxd+cKoxq3OtNPQvXvqqU0y34Xa5TQEVxj+nhL7QDZUJZX0XLHZoAAxcDwlk
-akl9TfXJWizScSDv1XEySLmA2FtMZPC6xE6W/Deygo+oiNSRccWpvIQpQPl60sXY
-ftjQAGfIfXq/fXX5Gh0SgdBEOxqZAfu0waq9ycYd0RlOgfXT2JUC2J7vD2O+9T8k
-a14SMedfKI9/DhHBuXS4Ez07I+xZ7J1iXn14+9g7hf5xxLVW0ES7oE0gyWah3tsp
-LMReK60EULdUsqm82rNcUiKNeCjAnU9Xc3VciH7CjkWXD8/6pbniM/4BhzGTutsY
-qCSt+4Lr+E3mGovSoWTiXSyaIxcPX4w17tXECBN+umgYmy8ibNV3m3meJZh01XBJ
-gzgfgzP/61eS85F/CLkBu8TIp2yDpEl5ClbS+N6p6A==
-=0TGv
+wsE5BAEBCgBtBYJpQv47CRAwD8G8nMSs/kUUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3JngvaVQnmf/8UfrfV6tud8EaYB08c5mPuzuZXyEsfg0kkW
+IQR9nhymuYEozvINEIUwD8G8nMSs/gAASlgL/3Gq8BeioOVloaBo98/1cWFGRErD
+1TpFyn+Z2fWXjzblfiTOyzCiDd0kQn86LKJwAq6s6vDIZ4z6FZaxofgQRjVvb5ax
+e4vNNnjVailMTqP/WqzTPywomUFsJHurnKgwk3hgjk/1C9CksT4NHJ6xnbX8Mbg8
+re36cat6WBsCAQtLxOU99J2Bs7O9GNirYm+XohsBca3oFSz6MpSmEWJCRXmNthDC
+Hndqlo1FkpzT97yMNpQArIMUMNiF9GAJ1Tcg4UlGvc4y+0O2d0KNCWfUTQHgEifr
+tJFo57UtePJBnL9wyA8i+bpBY3NVfW2i6567/kDlZ2U3T+0wy3DwEdvNVOd+zkvh
+M7fYufDifGClOB4Hri4AqUQFSfmx0nhioRJAiTZgykpuR5oJ9An62LBp+b1puXsv
+Mq8gBUsKUV4EOlGoba7dKbEIaxARDdt0DghWayVVXPG94xPs6UtQTKBFraHueIZL
+bY6juD64x829BHv5G+jlS91i7R6VRJqbeLeAag==
 -----END PGP SIGNATURE-----
