@@ -1,0 +1,33 @@
+{{- if .Values.certManager.enabled }}
+{{- $fullName := include "cc.fullname" . -}}
+# https://cert-manager.io/docs/reference/api-docs/#cert-manager.io/v1.CertificateSpec
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ printf "%s-cert" $fullName }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "cc.labels" . | nindent 4 }}
+spec:
+  issuerRef:
+    name: {{ .Values.certManager.issuerRef.name }}
+    kind: {{ .Values.certManager.issuerRef.kind }}
+    group: {{ .Values.certManager.issuerRef.group }}
+  secretName: {{ printf "%s-tls" $fullName }}
+  duration: {{ .Values.certManager.duration }}
+  renewBefore: {{ .Values.certManager.renewBefore }}
+  isCA: {{ .Values.certManager.isCA }}
+  privateKey:
+    algorithm: Ed25519
+    rotationPolicy: Always
+  usages:
+    {{- toYaml .Values.certManager.usages | nindent 4 }}
+  dnsNames:
+    - {{ $fullName }}
+    - {{ printf "%s.%s" $fullName .Release.Namespace }}
+    - {{ printf "%s.%s.svc" $fullName .Release.Namespace }}
+    - {{ printf "%s.%s.svc.%s" $fullName .Release.Namespace .Values.certManager.localDomain }}
+    {{- range .Values.certManager.dnsNames }}
+    - {{ . }}
+    {{- end }}
+{{- end -}}

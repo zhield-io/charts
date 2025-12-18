@@ -1,7 +1,8 @@
+{{- $fullName := include "cc.fullname" . -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "cc.fullname" . }}
+  name: {{ $fullName }}
   labels:
     {{- include "cc.labels" . | nindent 4 }}
   {{- with .Values.annotations }}
@@ -33,11 +34,16 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: {{ include "cc.fullname" . }}
-        {{- if .Values.tlsSecretName }}
+            name: {{ $fullName }}
+        {{- if and .Values.tlsSecretName (not .Values.certManager.enabled) }}
         - name: tls
           secret:
             secretName: {{ .Values.tlsSecretName }}
+        {{- end }}
+        {{- if .Values.certManager.enabled }}
+        - name: tls
+          secret:
+            secretName: {{ printf "%s-tls" $fullName }}
         {{- end }}
       containers:
         - name: {{ .Chart.Name }}
@@ -46,7 +52,7 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /etc/{{ .Chart.Name }}/conf
-            {{- if .Values.tlsSecretName }}
+            {{- if or .Values.tlsSecretName .Values.certManager.enabled }}
             - name: tls
               mountPath: /etc/{{ .Chart.Name }}/tls
               readOnly: true

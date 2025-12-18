@@ -36,8 +36,7 @@ access:
       secureBackend: false
       # Path prefixes used to identity incoming HTTP(S) traffic to the service.
       # For example: chart-example.local/api
-      paths:
-        []
+      paths: []
         # - /api
         # - /graphql
     # gRPC traffic settings:
@@ -58,14 +57,29 @@ access:
 nameOverride: ""
 fullnameOverride: ""
 
+# If provided, the credentials listed in this secret will be mounted
+# as environment variables in the deployment.
+credentialsSecretName: ""
+
 # If provided, these TLS credentials will be mounted as a volume
 # on the deployment and (if enabled) used by the ingress for TLS termination.
 # Credentials will be mounted by default at: `/etc/{{ .Chart.Name }}/tls`
 tlsSecretName: ""
 
-# If provided, the credentials listed in this secret will be mounted
-# as environment variables in the deployment.
-credentialsSecretName: ""
+certManager:
+  enabled: false
+  localDomain: cluster.local
+  issuerRef:
+    name: ca-issuer
+    kind: Issuer # or ClusterIssuer
+    group: cert-manager.io
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  isCA: false
+  usages:
+    - server auth
+    - client auth
+  dnsNames: []
 
 # Basic deployment settings.
 replicaCount: 1
@@ -87,8 +101,7 @@ annotations: {}
 
 # Custom environment variables for the container.
 # https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/
-env:
-  []
+env: []
   # - name: DEMO_GREETING
   #   value: "Hello from the environment"
 
@@ -159,8 +172,7 @@ resources:
 podSecurityContext: {}
 
 # Container security context.
-containerSecurityContext:
-  {}
+containerSecurityContext: {}
   # runAsUser: 10001
   # runAsGroup: 10001
   # runAsNonRoot: true
