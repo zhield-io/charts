@@ -66,6 +66,7 @@ credentialsSecretName: ""
 # Credentials will be mounted by default at: `/etc/{{ .Chart.Name }}/tls`
 tlsSecretName: ""
 
+# Use cert-manager to dynamically issue the TLS certificate for the service
 certManager:
   enabled: false
   localDomain: cluster.local

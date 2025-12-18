@@ -2,6 +2,21 @@
 nameOverride: ""
 fullnameOverride: ""
 tlsSecretName: "cas-cert"
+# Use cert-manager to dynamically issue the TLS certificate for the service
+certManager:
+  enabled: false
+  localDomain: cluster.local
+  issuerRef:
+    name: ca-issuer
+    kind: Issuer # or ClusterIssuer
+    group: cert-manager.io
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  isCA: false
+  usages:
+    - server auth
+    - client auth
+  dnsNames: []
 ccpEndpoint: "ccp.kube-system.svc:9090"
 replicaCount: 1
 revisionHistoryLimit: 3
@@ -12,7 +27,7 @@ service:
   type: ClusterIP
 image:
   repository: registry.k8s.io/autoscaling/cluster-autoscaler
-  tag: 1.32.0
+  tag: 1.33.3
   pullPolicy: IfNotPresent
 rbac:
   create: true

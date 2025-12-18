@@ -1,3 +1,4 @@
+{{- $fullName := include "cc.fullname" . -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -29,10 +30,18 @@ spec:
         - name: cloud-config
           configMap:
             name: "{{ include "cc.fullname" . }}"
+        {{- if .Values.certManager.enabled }}
+        - name: client-cert
+          secret:
+            secretName: {{ printf "%s-tls" $fullName }}
+            defaultMode: 0444
+        {{- end }}
+        {{- if and .Values.tlsSecretName (not .Values.certManager.enabled) }}
         - name: client-cert
           secret:
             secretName: "{{ .Values.tlsSecretName }}"
             defaultMode: 0444
+        {{- end }}
       containers:
         - name: cluster-autoscaler
           image: "{{ .Values.image.repository }}:v{{ .Values.image.tag | default .Chart.AppVersion }}"
