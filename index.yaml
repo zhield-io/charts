@@ -3,7 +3,7 @@ entries:
   cluster-autoscaler:
   - apiVersion: v2
     appVersion: 1.33.3
-    created: "2025-12-18T11:10:17.25093-06:00"
+    created: "2025-12-21T18:47:03.590914-06:00"
     description: Scales Kubernetes worker nodes within autoscaling groups.
     digest: 1967457609b48645d2d3fcfc38a2098f73dbc6b6e0424a32751b25ec84404f4b
     home: https://github.com/kubernetes/autoscaler
@@ -23,10 +23,35 @@ entries:
     urls:
     - cluster-autoscaler-0.1.0.tgz
     version: 0.1.0
+  kepler:
+  - annotations:
+      category: Monitoring
+    apiVersion: v2
+    appVersion: v0.11.3
+    created: "2025-12-21T18:47:03.591389-06:00"
+    description: A Helm chart for Kepler - Kubernetes Efficient Power Level Exporter
+    digest: 89c9111de8df90735080f0e6343619764dba116d97b45335b9c8df340e39d879
+    home: https://github.com/sustainable-computing-io/kepler
+    keywords:
+    - energy
+    - power
+    - monitoring
+    - prometheus
+    - sustainability
+    maintainers:
+    - name: Kepler Team
+      url: https://github.com/sustainable-computing-io/kepler
+    name: kepler
+    sources:
+    - https://github.com/sustainable-computing-io/kepler
+    type: application
+    urls:
+    - kepler-0.11.3.tgz
+    version: 0.11.3
   zhield-ccp:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2025-12-18T11:10:17.251628-06:00"
+    created: "2025-12-21T18:47:03.592071-06:00"
     description: Zhield custom cloud provider
     digest: b0651bfeddea4121487c9e952defbf70a89330e35302ce1c3eaacfde1e5b03a6
     home: https://github.com/zhield-io/charts
@@ -48,4 +73,4 @@ entries:
     urls:
     - zhield-ccp-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-18T11:10:17.250481-06:00"
+generated: "2025-12-21T18:47:03.590478-06:00"

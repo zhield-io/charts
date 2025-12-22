@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  category: Monitoring
+apiVersion: v2
+appVersion: v0.11.3
+description: A Helm chart for Kepler - Kubernetes Efficient Power Level Exporter
+home: https://github.com/sustainable-computing-io/kepler
+keywords:
+- - energy
+- - power
+- - monitoring
+- - prometheus
+- - sustainability
+maintainers:
+- - name: Kepler Team
+  url: https://github.com/sustainable-computing-io/kepler
+name: kepler
+sources:
+- - https://github.com/sustainable-computing-io/kepler
+type: application
+version: 0.11.3
+
+...
+files:
+  kepler-0.11.3.tgz: sha256:89c9111de8df90735080f0e6343619764dba116d97b45335b9c8df340e39d879
+
+-----BEGIN PGP SIGNATURE-----
+
+wsE5BAEBCgBtBYJpSJUHCRAwD8G8nMSs/kUUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3JnRBZF7B97KX27NB7yHRnu+1zN8diSW/nr1jvuOH17x0cW
+IQR9nhymuYEozvINEIUwD8G8nMSs/gAAPy4L/iBEeCNkgSmuKs6LZXufjM9UR6p4
+m/gXEMK5TLpJMfw54ixGSkDqqanBGPaFjUgyR411fhDzBR0XBxdbh566sh97vk2q
+4L4vSyOmluqfJ3hDZT0cjj7DQOlKSgLZbqdEzIMdpC/IL7Hcmlhvv5b4G5v/9CEX
+DOy1Mub4g5bHs65GrrJfN5nERhZz2nKfMtLJjUSMKUq7VaMXLoiixyllNMIKPH9h
+krvp3p1//XZQJ2QT7mRqkUl5Ir1N3HxxkOu1O5RuTeW4tvslGGqv/j0BwIIsUlPc
+3mLshw1swp53SZqw3EE8dtKnXF2gHvZWKU3N9lNEYJX2eNl+x5Ne3q7pt6dMqshM
+vE2SL5UxqS9LkgN8zFrfHm4InXE5YKJLC2c0pR4wz7nDxpKqu7SehTZiFxQ0reDN
+jQGk6rcXWgEPkc7JiDsMSFWOThsSLTt5Zv3nnS9Qxf0Bbf+YKq1CAr3cX3An9Dz9
+lqz3eK+p/gdABw4dreizz4iN6X2qVdjgAe1uhQ==
+-----END PGP SIGNATURE-----
