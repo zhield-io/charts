@@ -2,6 +2,10 @@
 nameOverride: ""
 fullnameOverride: ""
 tlsSecretName: "cas-cert"
+# 1 to 5; higher is more verbose
+loggingLevel: 5
+# timeout for all CCP interactions
+grpcTimeout: "120s"
 # Use cert-manager to dynamically issue the TLS certificate for the service
 certManager:
   enabled: false
@@ -29,13 +33,16 @@ image:
   repository: registry.k8s.io/autoscaling/cluster-autoscaler
   tag: 1.33.3
   pullPolicy: IfNotPresent
+  # Image registry credentials, provided as a simple list.
+  # https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+  pullSecrets: []
+  # - my-registry
 rbac:
   create: true
   pspEnabled: false
   serviceAccount:
     name: ""
     create: true
-    automountServiceAccountToken: true
     annotations: {}
 additionalLabels:
   app: cluster-autoscaler

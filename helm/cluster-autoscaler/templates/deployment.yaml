@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "cc.fullname" . }}
+  name: {{ $fullName }}
   labels:
     {{- include "cc.labels" . | nindent 4 }}
   {{- with .Values.annotations }}
@@ -25,7 +25,14 @@ spec:
       labels:
         {{- include "cc.selectorLabels" . | nindent 8 }}
     spec:
+    {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.image.pullSecrets }}
+        - name: {{ . }}
+        {{- end }}
+    {{- end }}
       serviceAccountName: {{ include "cc.serviceAccountName" . }}
+      automountServiceAccountToken: true
       volumes:
         - name: cloud-config
           configMap:
@@ -48,14 +55,14 @@ spec:
           imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           resources:
             requests:
-              cpu: 100m
-              memory: 128Mi
+              cpu: 50m
+              memory: 64Mi
             limits:
               cpu: 200m
               memory: 512Mi
           command:
             - ./cluster-autoscaler
-            - --v=5
+            - --v={{ .Values.loggingLevel }}
             - --cloud-provider=externalgrpc
             - --cloud-config=/config/cloud-config
           volumeMounts:
