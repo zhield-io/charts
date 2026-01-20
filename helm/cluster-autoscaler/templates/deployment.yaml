@@ -58,13 +58,20 @@ spec:
               cpu: 50m
               memory: 64Mi
             limits:
-              cpu: 200m
               memory: 512Mi
           command:
             - ./cluster-autoscaler
             - --v={{ .Values.loggingLevel }}
+            - --cluster-name="{{ .Values.clusterName }}"
             - --cloud-provider=externalgrpc
             - --cloud-config=/config/cloud-config
+            {{- range $key, $value := .Values.extraArgs }}
+            {{- if not (kindIs "invalid" $value) }}
+            - --{{ $key | mustRegexFind "^[^_]+" }}={{ $value }}
+            {{- else }}
+            - --{{ $key | mustRegexFind "^[^_]+" }}
+            {{- end }}
+          {{- end }}
           volumeMounts:
             - name: cloud-config
               mountPath: /config

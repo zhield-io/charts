@@ -2,10 +2,11 @@
 nameOverride: ""
 fullnameOverride: ""
 tlsSecretName: "cas-cert"
+clusterName: "cluster-local"
 # 1 to 5; higher is more verbose
 loggingLevel: 5
 # timeout for all CCP interactions
-grpcTimeout: "120s"
+grpcTimeout: "300s"
 # Use cert-manager to dynamically issue the TLS certificate for the service
 certManager:
   enabled: false
@@ -49,3 +50,29 @@ additionalLabels:
   k8s-addon: cluster-autoscaler.addons.k8s.io
   k8s-app: cluster-autoscaler
 annotations: {}
+# https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-are-the-parameters-to-ca
+extraArgs:
+  emit-per-nodegroup-metrics: true
+  enable-proactive-scaleup: true
+  expander: least-waste
+  logtostderr: true
+  stderrthreshold: info
+  write-status-configmap: false
+  status-config-map-name: autoscaler-cas-status
+  scan-interval: 20s
+  leader-elect: true
+  leader-elect-resource-lock: leases
+  skip-nodes-with-local-storage: true
+  skip-nodes-with-system-pods: true
+  balance-similar-node-groups: true
+  min-replica-count: 1
+  max-node-provision-time: 10m0s
+  scale-down-enabled: true
+  scale-down-utilization-threshold: 0.4
+  scale-down-non-empty-candidates-count: 30
+  scale-down-delay-after-add: 10m
+  scale-down-delay-after-delete: 0s
+  scale-down-delay-after-failure: 3m
+  scale-down-unneeded-time: 10m
+  node-deletion-delay-timeout: 2m
+  node-deletion-batcher-interval: 0s
