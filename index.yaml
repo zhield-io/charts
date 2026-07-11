@@ -3,7 +3,7 @@ entries:
   cluster-autoscaler:
   - apiVersion: v2
     appVersion: 1.33.3
-    created: "2026-01-19T18:43:51.287647-06:00"
+    created: "2026-07-11T11:40:20.964128-06:00"
     description: Scales Kubernetes worker nodes within autoscaling groups.
     digest: 8d84155e0c839dec03b169361808df3b05a6bf91a988a1068802124fea59b360
     home: https://github.com/kubernetes/autoscaler
@@ -27,8 +27,32 @@ entries:
   - annotations:
       category: Monitoring
     apiVersion: v2
+    appVersion: v0.11.4
+    created: "2026-07-11T11:40:20.965078-06:00"
+    description: A Helm chart for Kepler - Kubernetes Efficient Power Level Exporter
+    digest: ac84f5924ec93bdcebef1a2d70493e5f76e1ad576a723365a3fb171364d665ae
+    home: https://github.com/sustainable-computing-io/kepler
+    keywords:
+    - energy
+    - power
+    - monitoring
+    - prometheus
+    - sustainability
+    maintainers:
+    - name: Kepler Team
+      url: https://github.com/sustainable-computing-io/kepler
+    name: kepler
+    sources:
+    - https://github.com/sustainable-computing-io/kepler
+    type: application
+    urls:
+    - kepler-0.11.4.tgz
+    version: 0.11.4
+  - annotations:
+      category: Monitoring
+    apiVersion: v2
     appVersion: v0.11.3
-    created: "2026-01-19T18:43:51.288735-06:00"
+    created: "2026-07-11T11:40:20.964592-06:00"
     description: A Helm chart for Kepler - Kubernetes Efficient Power Level Exporter
     digest: 89c9111de8df90735080f0e6343619764dba116d97b45335b9c8df340e39d879
     home: https://github.com/sustainable-computing-io/kepler
@@ -51,7 +75,7 @@ entries:
   zhield-ccp:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2026-01-19T18:43:51.289462-06:00"
+    created: "2026-07-11T11:40:20.96579-06:00"
     description: Zhield custom cloud provider
     digest: 5e57c3256c5f0de326c6dfb5f4bb917fab0854c4211e170a564ab9c7ba16e90c
     home: https://github.com/zhield-io/charts
@@ -73,4 +97,4 @@ entries:
     urls:
     - zhield-ccp-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-19T18:43:51.28704-06:00"
+generated: "2026-07-11T11:40:20.963591-06:00"
