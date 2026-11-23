@@ -1,0 +1,30 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: v0.20.7
+description: Kueue is a set of APIs and controllers for job queueing. It is a job-level
+  manager that decides when a job should be admitted to start (as in pods can be created)
+  and when it should stop (as in active pods should be deleted).
+name: kueue
+type: application
+version: 0.20.7
+
+...
+files:
+  kueue-0.20.7.tgz: sha256:7f0339f7c1dbf1674045f41f3d13cfbf720aa4580246bd0ce4f2664183808380
+
+-----BEGIN PGP SIGNATURE-----
+
+wsE5BAEBCgBtBYJrBHPyCRAwD8G8nMSs/kUUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3Jn/+oHIkQBLZzMrSIzBxASbxsk70amV188EbtGlPWF7A0W
+IQR9nhymuYEozvINEIUwD8G8nMSs/gAAiVoL/2w4h6FclZB0h3hl9d4/pOyFlGOW
+gvGQxJwREX89usv+uqw7NKAMgkShO6KFasSLf5H66UrLgoo4v9+Xr3A0/fawmPkh
+dBK2sUbTAfnnjT+SSuRnEGs+rREOsmB5HSeMd+IrtrrpKEimdal7a88j2rcBThVO
+I2ihi8+0nZSb0hH5+bZh6eCxMMT1vVJcxticuoFaFP/9KfhQADZx622aQXrDVsXb
+q7RY0rFYIF0VrgMNfnqWU+qnU/9tCQ1o/wmXQRIKUUn4asj0SroMXuyAhbkhikyE
+Zv1WvovCrW0scDJlG3JWu5rDuZmw6tvs+v+qUqO5TZd0wrUN7whYHtk2aXs9yEiF
+enBvk5Ib4f3v5o9XWaAGjQ/w5IyDyeK6YX/D++BwYzGccnCJaU7h0nbWb79lek8a
+GcnS07S9A7dUR3STFeWZKbuQoPkqcjE/UD4la5uiA6Yul9NwDMCy4RjSwO+0sBbO
+KYejaQKFkRVQ/ZfgSK8WL+7xShJPNMS1gvmvDw==
+-----END PGP SIGNATURE-----

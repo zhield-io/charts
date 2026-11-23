@@ -3,9 +3,9 @@ entries:
   cluster-autoscaler:
   - apiVersion: v2
     appVersion: 1.33.3
-    created: "2026-07-11T11:40:20.964128-06:00"
+    created: "2026-11-23T11:12:19.165331-06:00"
     description: Scales Kubernetes worker nodes within autoscaling groups.
-    digest: 8d84155e0c839dec03b169361808df3b05a6bf91a988a1068802124fea59b360
+    digest: d871af7bd3893430bfbbe2ee8419ec1be2ba0df7f2bbeefe5b8953c9cd48669e
     home: https://github.com/kubernetes/autoscaler
     icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
     keywords:
@@ -28,9 +28,9 @@ entries:
       category: Monitoring
     apiVersion: v2
     appVersion: v0.11.4
-    created: "2026-07-11T11:40:20.965078-06:00"
+    created: "2026-11-23T11:12:19.16631-06:00"
     description: A Helm chart for Kepler - Kubernetes Efficient Power Level Exporter
-    digest: ac84f5924ec93bdcebef1a2d70493e5f76e1ad576a723365a3fb171364d665ae
+    digest: 5a9fd5ca57857ce699e76a28c94a2300984176d8f128e67c3c5b0f074bb1451d
     home: https://github.com/sustainable-computing-io/kepler
     keywords:
     - energy
@@ -52,7 +52,7 @@ entries:
       category: Monitoring
     apiVersion: v2
     appVersion: v0.11.3
-    created: "2026-07-11T11:40:20.964592-06:00"
+    created: "2026-11-23T11:12:19.165827-06:00"
     description: A Helm chart for Kepler - Kubernetes Efficient Power Level Exporter
     digest: 89c9111de8df90735080f0e6343619764dba116d97b45335b9c8df340e39d879
     home: https://github.com/sustainable-computing-io/kepler
@@ -72,12 +72,49 @@ entries:
     urls:
     - kepler-0.11.3.tgz
     version: 0.11.3
+  kueue:
+  - apiVersion: v2
+    appVersion: v0.20.7
+    created: "2026-11-23T11:12:19.173777-06:00"
+    description: Kueue is a set of APIs and controllers for job queueing. It is a
+      job-level manager that decides when a job should be admitted to start (as in
+      pods can be created) and when it should stop (as in active pods should be deleted).
+    digest: 7f0339f7c1dbf1674045f41f3d13cfbf720aa4580246bd0ce4f2664183808380
+    name: kueue
+    type: application
+    urls:
+    - kueue-0.20.7.tgz
+    version: 0.20.7
+  sshpiper:
+  - apiVersion: v2
+    appVersion: v1.6.1
+    created: "2026-11-23T11:12:19.174273-06:00"
+    description: The missing reverse proxy for ssh scp, username based SSH Reverse
+      Proxy
+    digest: d0967361812d34f14d8ad8675ce86e4c43fc1628609467dced27fb7b877a3a03
+    keywords:
+    - ssh
+    - scp
+    - reverse proxy
+    - sshpiper
+    maintainers:
+    - email: farmer1992@gmail.com
+      name: Boshi Lian
+      url: https://github.com/tg123
+    name: sshpiper
+    sources:
+    - https://github.com/tg123/sshpiper
+    - https://github.com/tg123/sshpiper-chart
+    type: application
+    urls:
+    - sshpiper-0.6.0.tgz
+    version: 0.6.0
   zhield-ccp:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2026-07-11T11:40:20.96579-06:00"
+    created: "2026-11-23T11:12:19.174985-06:00"
     description: Zhield custom cloud provider
-    digest: 5e57c3256c5f0de326c6dfb5f4bb917fab0854c4211e170a564ab9c7ba16e90c
+    digest: 359b847b312d828fcab9da6f3251d7582ab8b6ebc41db1baca881ca1be5bf910
     home: https://github.com/zhield-io/charts
     icon: https://raw.githubusercontent.com/zhield-io/charts/main/helm/zhield-ccp/icon.png
     keywords:
@@ -97,4 +134,4 @@ entries:
     urls:
     - zhield-ccp-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-11T11:40:20.963591-06:00"
+generated: "2026-11-23T11:12:19.164702-06:00"

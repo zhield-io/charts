@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: v1.6.1
+description: The missing reverse proxy for ssh scp, username based SSH Reverse Proxy
+keywords:
+- - ssh
+- - scp
+- - reverse proxy
+- - sshpiper
+maintainers:
+- - email: farmer1992@gmail.com
+  name: Boshi Lian
+  url: https://github.com/tg123
+name: sshpiper
+sources:
+- - https://github.com/tg123/sshpiper
+- - https://github.com/tg123/sshpiper-chart
+type: application
+version: 0.6.0
+
+...
+files:
+  sshpiper-0.6.0.tgz: sha256:d0967361812d34f14d8ad8675ce86e4c43fc1628609467dced27fb7b877a3a03
+
+-----BEGIN PGP SIGNATURE-----
+
+wsE5BAEBCgBtBYJrBHPyCRAwD8G8nMSs/kUUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3JnAy+KBuN+72nKsNeU3pGZvnIW2W8u4LlwD9ooOUeGJdgW
+IQR9nhymuYEozvINEIUwD8G8nMSs/gAABxwL/16oQGISWlpN8NwKqB3Y1OnwCkTu
+QYkSCm/L5jFY4QBPKxBhK2xEE3IXdaItGAovh+V+lpVLl7m4QWFaKsSYHg4KuzLc
+DZMzBQMITcSebHhPT93YyGRUy78N64An0g+IIBdpL5uGQANdxiUFHiMF2YihHbMu
+Zkm9YMoNs+k/FTVbOm3rBVVPBO8xuXIB9frPqF6dIuHYu8UcT/gs0t8PMvFJRqyk
+wGjHCS9lyQir0SDSa5yKcAQ+ijeZG9bO9gaGpAKOsJClJl0xv088vfabQehcxnmP
+jMuCuHu85cyJWJYJwtKX7J1OL3MgWTRiz8KG1jTceciyeyoXgRFVVAaRudR+rsDY
+IVUFMOrHqEtIe51DqDgJeHtGPrzbZbAZ6Zn9CdoW8eyWZtaQsiwCgJbjiRr5BQal
+9oUJoGGEH+LAlXSfm/C0Sw94GnEIJFrpuDJcawoURGqeptvZzasg8MFBYKWqD1Jp
+j6SCx1yM6HjTLavQOcSUBL85RdCRp67KcWMehg==
+-----END PGP SIGNATURE-----

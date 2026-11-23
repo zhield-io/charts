@@ -1,0 +1,18 @@
+apiVersion: v2
+appVersion: v1.6.1
+description: The missing reverse proxy for ssh scp, username based SSH Reverse Proxy
+keywords:
+- ssh
+- scp
+- reverse proxy
+- sshpiper
+maintainers:
+- email: farmer1992@gmail.com
+  name: Boshi Lian
+  url: https://github.com/tg123
+name: sshpiper
+sources:
+- https://github.com/tg123/sshpiper
+- https://github.com/tg123/sshpiper-chart
+type: application
+version: 0.6.0
